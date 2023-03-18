@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
@@ -19,7 +18,7 @@ export default function Home() {
       <main className={styles.main}>
 
         <div className={styles.center}>
-          <Verse text="123 456 789" />
+          <Verse text="ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَـٰلَمِینَ ۝٢"/>
         </div>
 
       </main>
