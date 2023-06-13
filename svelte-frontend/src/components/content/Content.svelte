@@ -6,16 +6,16 @@
     let items: (string | number)[][] = quran;
     let start: any;
     let end: any;
-    // console.log( quran[2][2]);
+   
+   const setSelectedWords = (verseNumber: number, index: number) => {
+        console.log("index:", index, "verse number: ",verseNumber);
+   }
 
-    // for (let i = 0; i < quran.length; i++) {
-    //     verses.push(quran[i][1]);
-    // }
 </script>
 
 <div class="rtl-grid container">
     <VirtualList {items} bind:start bind:end let:item>
-        <Verse verseText={item[1]} verseNumber={item[3]}/>
+        <Verse verseText={item[1]} verseNumber={item[3]} setSelection={setSelectedWords}/>
 	</VirtualList>
 </div>
 

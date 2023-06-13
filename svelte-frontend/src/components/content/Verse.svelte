@@ -3,10 +3,11 @@
     import Word from './Word.svelte';
     export let verseText:string;
     export let verseNumber:number;
-
+    export let setSelection: Function;
     
     const splitedVerse = verseText.split(' ');
     const numberMapping = {
+        '0' : '٠',
         '1' : '١',
         '2' : '٢',
         '3' : '٣',
@@ -29,11 +30,16 @@
         console.log(event.target.innerText);
     }
     const verseNumberInArabic = getVerseNumberInArabic(verseNumber);
+
+    const setSelectedWord = (index: number) => {
+        setSelection(verseNumber, index);
+    }
+
 </script>
 
 <div class="card text-center hover:cursor-default">
     {#each  splitedVerse as word, index}
-        <Word text={word} onSelectionChange={() => {}}/>
+        <Word text={word} wordIndex={index} setSelectedWord={setSelectedWord} />
         <span> </span>
     {/each}
     <span> ۝{verseNumberInArabic} </span>
